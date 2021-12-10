@@ -15,25 +15,70 @@ A smooth dialog is the customized dialog that provides the simple configuration 
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+Dialog will show base on Platform that build on it.
+
+- This is for android, web, windows and linux.
+
+![photo_2021-12-10 10 02 27](https://user-images.githubusercontent.com/47247206/145510171-dc3a6325-0b2c-4b20-bf9f-c1a9e97c5f66.jpeg)
+
+
+- This is for iOS and mac.
+
+![photo_2021-12-10 10 02 32](https://user-images.githubusercontent.com/47247206/145510183-9e9e70b2-eaf9-427e-80cc-ae84431e7825.jpeg)
+
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Copy it into pubspec.yaml then run command flutter pub get
+
+```dart
+smooth_dialog: ^0.0.2
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+- This is how to show dialog
+
 
 ```dart
-const like = 'sample';
+  final SmoothDialog smoothDialog = SmoothDialog(context);
+      smoothDialog
+        .setTitleHeader("this is the header dialog")
+        .setDescription("This is description")
+        .setTitlePositive("Confirm")
+        .setTitleNegative("Cancel")
+        .showDialog();
+```
+
+- This is how to dismiss dialog
+
+```dart
+  final SmoothDialog smoothDialog = SmoothDialog(context);
+      smoothDialog.dismissDialog();
+```
+
+- it also provide listener call back from button positive negative and dismiss
+
+```dart
+  final SmoothDialog smoothDialog = SmoothDialog(context);
+    smoothDialog
+        .setTitleHeader("this is the header dialog")
+        .setDescription("This is description")
+        .setTitlePositive("Confirm")
+        .setTitleNegative("Cancel")
+        .addButtonNegativeListener((){
+          print("User click on button Negative");
+    })
+        .addButtonPositiveListener((){
+      print("User click on button Positive");
+    })
+        .addDismissListener((){
+      print("User was exit dialog");
+    })
+        .showDialog();
 ```
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
-# easy_dialog
+This is my first package so if you wants to contribute with let's check and create an issue on this repo, thank!
+# smooth_dialog
