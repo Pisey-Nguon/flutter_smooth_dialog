@@ -11,7 +11,7 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages). 
 -->
 
-A smooth dialog is the customized dialog that provides the simple configuration of dialog and it has two UI experiences like dialog of android iOS desktop and web.
+A smooth dialog is the customized dialog that provides the simple configuration of dialog and it has two UI experiences is Android and iOS.
 
 ## Features
 
@@ -80,5 +80,5 @@ smooth_dialog: ^0.0.2
 
 ## Additional information
 
-This is my first package so if you wants to contribute with let's check and create an issue on this repo, thank!
+This is my first package, so if you want to contribute, please create an issue on this repository on Github, thank you!
 # smooth_dialog
