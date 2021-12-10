@@ -1,3 +1,4 @@
-## 0.0.2
+## 0.0.3
 
-* It's was improve about how to implement it
+* Add license to the project
+* Fix the issue can run show dialog on web

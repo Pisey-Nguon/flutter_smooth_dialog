@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_dialog/resources_dialog.dart';
@@ -58,10 +59,14 @@ class AnimDialog {
   }
 
   Widget _validateWidgetByPlatform() {
-    if (Platform.isIOS || Platform.isMacOS) {
-      return _iOSDialog();
-    } else {
+    if (kIsWeb) {
       return _androidDialog();
+    } else {
+      if (Platform.isIOS || Platform.isMacOS) {
+        return _iOSDialog();
+      } else {
+        return _androidDialog();
+      }
     }
   }
 
