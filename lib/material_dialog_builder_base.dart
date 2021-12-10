@@ -1,26 +1,21 @@
-import 'package:flutter/cupertino.dart';
-import 'package:smooth_dialog/resources_dialog.dart';
+import 'package:smooth_dialog/smooth_dialog.dart';
 
 abstract class MaterialDialogBuilderBase {
+  SmoothDialog setTitleHeader(String titleHeader);
 
-  @protected
-  ResourcesDialog resourcesDialog = ResourcesDialog();
+  SmoothDialog setDescription(String description);
 
-  void setTitleHeader(String titleHeader);
+  SmoothDialog setTitlePositive(String titlePositive);
 
-  void setDescription(String description);
+  SmoothDialog setTitleNegative(String titleNegative);
 
-  void setTitlePositive(String titlePositive);
+  SmoothDialog setBarrierDismissible(bool barrierDismissible);
 
-  void setTitleNegative(String titleNegative);
+  SmoothDialog addButtonPositiveListener(Function onPositiveListener);
 
-  void setBarrierDismissible(bool barrierDismissible);
+  SmoothDialog addButtonNegativeListener(Function onNegativeListener);
 
-  void addButtonPositiveListener(Function onPositiveListener);
-
-  void addButtonNegativeListener(Function onNegativeListener);
-
-  void addDismissListener(Function onDismissListener);
+  SmoothDialog addDismissListener(Function onDismissListener);
 
   void showDialog();
 

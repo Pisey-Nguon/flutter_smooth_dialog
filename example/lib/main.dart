@@ -24,7 +24,6 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
 
-
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
@@ -39,15 +38,15 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _showDialog() {
-    smoothDialog.setTitleHeader("This is header dialog");
-    smoothDialog.setDescription("This is description");
-    smoothDialog.setTitlePositive("Confirm");
-    smoothDialog.setTitleNegative("Cancel");
-    smoothDialog.showDialog();
-  }
-
-  void _hideDialog(){
-    smoothDialog.dismissDialog();
+    smoothDialog
+        .setTitleHeader("this is the header dialog")
+        .setDescription("This is description")
+        .setTitlePositive("Confirm")
+        .setTitleNegative("Cancel")
+        .addButtonNegativeListener(() {})
+        .addButtonPositiveListener(() {})
+        .addDismissListener(() {})
+        .showDialog();
   }
 
   @override
@@ -61,10 +60,13 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             TextButton(
-                onPressed: (){
-                  _showDialog();
-            },
-              child: const Text("Show",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 24),),
+              onPressed: () {
+                _showDialog();
+              },
+              child: const Text(
+                "Show",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+              ),
             ),
           ],
         ),

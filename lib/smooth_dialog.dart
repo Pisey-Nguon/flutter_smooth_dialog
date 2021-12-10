@@ -1,20 +1,22 @@
 library easy_dialog;
 
 import 'package:flutter/material.dart';
+import 'package:smooth_dialog/resources_dialog.dart';
 
 import 'anim_dialog.dart';
 import 'material_dialog_builder_base.dart';
 
-
 class SmoothDialog extends MaterialDialogBuilderBase {
-  final BuildContext context;
+  @protected
+  final BuildContext _context;
 
-  SmoothDialog(this.context);
+  SmoothDialog(this._context);
   AnimDialog? _animDialog;
+  final ResourcesDialog _resourcesDialog = ResourcesDialog();
 
   @override
-  void showDialog(){
-    _animDialog = AnimDialog(context, resourcesDialog);
+  void showDialog() {
+    _animDialog = AnimDialog(_context, _resourcesDialog);
     _animDialog?.show();
   }
 
@@ -24,44 +26,50 @@ class SmoothDialog extends MaterialDialogBuilderBase {
   }
 
   @override
-  void setDescription(String description) {
-    resourcesDialog.description = description;
+  SmoothDialog setDescription(String description) {
+    _resourcesDialog.description = description;
+    return this;
   }
 
   @override
-  void setTitleHeader(String titleHeader) {
-    resourcesDialog.titleHeader = titleHeader;
+  SmoothDialog setTitleHeader(String titleHeader) {
+    _resourcesDialog.titleHeader = titleHeader;
+    return this;
   }
 
   @override
-  void setTitleNegative(String titleNegative) {
-    resourcesDialog.titleNegative = titleNegative;
+  SmoothDialog setTitleNegative(String titleNegative) {
+    _resourcesDialog.titleNegative = titleNegative;
+    return this;
   }
 
   @override
-  void setTitlePositive(String titlePositive) {
-    resourcesDialog.titlePositive = titlePositive;
+  SmoothDialog setTitlePositive(String titlePositive) {
+    _resourcesDialog.titlePositive = titlePositive;
+    return this;
   }
 
   @override
-  void addButtonNegativeListener(Function onNegativeListener) {
-    resourcesDialog.onNegativeListener = onNegativeListener;
+  SmoothDialog addButtonNegativeListener(Function onNegativeListener) {
+    _resourcesDialog.onNegativeListener = onNegativeListener;
+    return this;
   }
 
   @override
-  void addButtonPositiveListener(Function onPositiveListener) {
-    resourcesDialog.onPositiveListener = onPositiveListener;
+  SmoothDialog addButtonPositiveListener(Function onPositiveListener) {
+    _resourcesDialog.onPositiveListener = onPositiveListener;
+    return this;
   }
 
   @override
-  void setBarrierDismissible(bool barrierDismissible) {
-    resourcesDialog.barrierDismissible = barrierDismissible;
+  SmoothDialog setBarrierDismissible(bool barrierDismissible) {
+    _resourcesDialog.barrierDismissible = barrierDismissible;
+    return this;
   }
 
   @override
-  void addDismissListener(Function onDismissListener) {
-    resourcesDialog.onDismissListener = onDismissListener;
+  SmoothDialog addDismissListener(Function onDismissListener) {
+    _resourcesDialog.onDismissListener = onDismissListener;
+    return this;
   }
-
-  
 }

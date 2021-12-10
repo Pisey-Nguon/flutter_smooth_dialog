@@ -1,10 +1,10 @@
 name: smooth_dialog
-description: A new Flutter package with a customized Dialog.
-version: 0.0.1
+description: A smooth dialog is the customized dialog that provides the simple configuration of dialog and it has two UI experiences like dialog of android iOS desktop and web.
+version: 0.0.2
 homepage: https://github.com/Pisey-Nguon/flutter_smooth_dialog
 
 environment:
-  sdk: ">=2.15.0 <3.0.0"
+  sdk: ">=2.14.4 <3.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
