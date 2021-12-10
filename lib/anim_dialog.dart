@@ -58,7 +58,7 @@ class AnimDialog {
   }
 
   Widget _validateWidgetByPlatform() {
-    if (Platform.isIOS) {
+    if (Platform.isIOS || Platform.isMacOS) {
       return _iOSDialog();
     } else {
       return _androidDialog();
