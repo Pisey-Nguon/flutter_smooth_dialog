@@ -1,7 +1,7 @@
-name: easy_dialog
+name: smooth_dialog
 description: A new Flutter package with a customized Dialog.
 version: 0.0.1
-homepage: https://github.com/Pisey-Nguon/easy_dialog
+homepage: https://github.com/Pisey-Nguon/flutter_smooth_dialog
 
 environment:
   sdk: ">=2.15.0 <3.0.0"

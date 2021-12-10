@@ -1,5 +1,5 @@
-import 'package:easy_dialog/resources_dialog.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:smooth_dialog/resources_dialog.dart';
 
 abstract class MaterialDialogBuilderBase {
 

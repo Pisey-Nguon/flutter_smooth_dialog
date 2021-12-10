@@ -29,7 +29,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  easy_dialog:
+  smooth_dialog:
     path: ../
 
 

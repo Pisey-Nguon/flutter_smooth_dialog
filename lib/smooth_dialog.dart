@@ -6,10 +6,10 @@ import 'anim_dialog.dart';
 import 'material_dialog_builder_base.dart';
 
 
-class EasyDialog extends MaterialDialogBuilderBase {
+class SmoothDialog extends MaterialDialogBuilderBase {
   final BuildContext context;
 
-  EasyDialog(this.context);
+  SmoothDialog(this.context);
   AnimDialog? _animDialog;
 
   @override

@@ -1,7 +1,7 @@
 import 'dart:io';
-import 'package:easy_dialog/resources_dialog.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:smooth_dialog/resources_dialog.dart';
 
 class AnimDialog {
 

@@ -1,5 +1,5 @@
-import 'package:easy_dialog/easy_dialog.dart';
 import 'package:flutter/material.dart';
+import 'package:smooth_dialog/smooth_dialog.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,24 +30,24 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  late EasyDialog easyDialog;
+  late SmoothDialog smoothDialog;
 
   @override
   void initState() {
     super.initState();
-    easyDialog = EasyDialog(context);
+    smoothDialog = SmoothDialog(context);
   }
 
   void _showDialog() {
-    easyDialog.setTitleHeader("This is header dialog");
-    easyDialog.setDescription("This is description");
-    easyDialog.setTitlePositive("Confirm");
-    easyDialog.setTitleNegative("Cancel");
-    easyDialog.showDialog();
+    smoothDialog.setTitleHeader("This is header dialog");
+    smoothDialog.setDescription("This is description");
+    smoothDialog.setTitlePositive("Confirm");
+    smoothDialog.setTitleNegative("Cancel");
+    smoothDialog.showDialog();
   }
 
   void _hideDialog(){
-    easyDialog.dismissDialog();
+    smoothDialog.dismissDialog();
   }
 
   @override
