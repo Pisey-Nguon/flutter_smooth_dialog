@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
+
 @protected
-class ResourcesDialog{
+class ResourcesDialog {
   /// Whether dialog can dismiss by touching outside or not
   bool barrierDismissible = true;
 
