@@ -43,11 +43,10 @@ class _MyHomePageState extends State<MyHomePage> {
         .setDescription("This is description")
         .setTitlePositive("Confirm")
         .setTitleNegative("Cancel")
+        .addButtonNegativeListener(() {})
+        .addButtonPositiveListener(() {})
+        .addDismissListener(() {})
         .showDialog();
-  }
-
-  void _hideDialog() {
-    smoothDialog.dismissDialog();
   }
 
   @override
