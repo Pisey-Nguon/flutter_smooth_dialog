@@ -39,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _showDialog() {
     smoothDialog
-        .setTitleHeader("This is header dialog")
+        .setTitleHeader("this is the header dialog")
         .setDescription("This is description")
         .setTitlePositive("Confirm")
         .setTitleNegative("Cancel")
