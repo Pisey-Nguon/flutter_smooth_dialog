@@ -32,7 +32,7 @@ CustomDialog will show base on Platform that build on it.
 Copy it into pubspec.yaml then run command flutter pub get
 
 ```dart
-smooth_dialog: ^0.0.2
+smooth_dialog: ^0.0.4
 ```
 
 ## Usage

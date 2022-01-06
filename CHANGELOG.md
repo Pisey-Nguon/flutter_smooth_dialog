@@ -2,3 +2,8 @@
 
 * Add license to the project
 * Fix the issue can run show dialog on web
+
+## 0.0.4
+
+* Add loading dialog
+* Optimize structure of code
