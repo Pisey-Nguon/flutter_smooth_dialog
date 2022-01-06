@@ -37,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
     smoothDialog = SmoothDialog(context);
   }
 
-  void _showDialog() {
+  void _showAlertDialog() {
     smoothDialog
         .setTitleHeader("this is the header dialog")
         .setDescription("This is description")
@@ -47,6 +47,10 @@ class _MyHomePageState extends State<MyHomePage> {
         .addButtonPositiveListener(() {})
         .addDismissListener(() {})
         .showDialog();
+  }
+
+  void _showLoadingDialog() {
+    smoothDialog.showLoadingDialog();
   }
 
   @override
@@ -61,10 +65,19 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             TextButton(
               onPressed: () {
-                _showDialog();
+                _showAlertDialog();
               },
               child: const Text(
-                "Show",
+                "Show Alert dialog",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+              ),
+            ),
+            TextButton(
+              onPressed: () {
+                _showLoadingDialog();
+              },
+              child: const Text(
+                "Show Loading dialog",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
               ),
             ),

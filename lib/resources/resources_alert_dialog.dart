@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
 @protected
-class ResourcesDialog {
+class ResourcesAlertDialog {
   /// Whether dialog can dismiss by touching outside or not
   bool barrierDismissible = true;
 
@@ -20,7 +20,7 @@ class ResourcesDialog {
   String? titlePositive;
   String? titleNegative;
 
-  /// Dialog's background color
+  /// CustomDialog's background color
   Color? backgroundColor;
 
   /// Duration of blur and background color animation

@@ -15,7 +15,7 @@ A smooth dialog is the customized dialog that provides the simple configuration 
 
 ## Features
 
-Dialog will show base on Platform that build on it.
+CustomDialog will show base on Platform that build on it.
 
 - This is for android, web, windows and linux.
 

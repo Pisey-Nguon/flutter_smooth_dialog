@@ -1,12 +1,13 @@
 import 'dart:io';
-import 'package:flutter/foundation.dart' show kIsWeb;
+
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
-import 'package:smooth_dialog/resources_dialog.dart';
+import 'package:smooth_dialog/resources/resources_alert_dialog.dart';
 
 class AnimDialog {
   final BuildContext context;
-  final ResourcesDialog resourcesDialog;
+  final ResourcesAlertDialog resourcesDialog;
 
   AnimDialog(this.context, this.resourcesDialog);
 
