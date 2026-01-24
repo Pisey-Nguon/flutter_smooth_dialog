@@ -29,10 +29,10 @@ A modern, highly customizable Flutter dialog package with beautiful animations a
 ## 📸 Preview
 
 ### Material Design (Android, Web, Windows, Linux)
-![Material Dialog](https://user-images.githubusercontent.com/47247206/145510171-dc3a6325-0b2c-4b20-bf9f-c1a9e97c5f66.jpeg)
+![Material Dialog](https://raw.githubusercontent.com/Pisey-Nguon/flutter_smooth_dialog/refs/heads/master/Screenshot_1769245531.png)
 
 ### Cupertino (iOS, macOS)
-![Cupertino Dialog](https://user-images.githubusercontent.com/47247206/145510183-9e9e70b2-eaf9-427e-80cc-ae84431e7825.jpeg)
+![Cupertino Dialog](https://raw.githubusercontent.com/Pisey-Nguon/flutter_smooth_dialog/refs/heads/master/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20-%202026-01-24%20at%2016.16.18.png)
 
 ## 🚀 Getting Started
 
