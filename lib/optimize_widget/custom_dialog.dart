@@ -31,7 +31,7 @@ class CustomDialog extends StatelessWidget {
   ///
   /// Typically used in conjunction with [showDialog].
   const CustomDialog({
-    Key? key,
+    super.key,
     this.backgroundColor,
     this.elevation,
     this.insetAnimationDuration = const Duration(milliseconds: 100),
@@ -41,15 +41,14 @@ class CustomDialog extends StatelessWidget {
     this.shape,
     this.alignment,
     this.child,
-  })  : assert(clipBehavior != null),
-        super(key: key);
+  });
 
   /// {@template flutter.material.dialog.backgroundColor}
   /// The background color of the surface of this [Dialog].
   ///
   /// This sets the [Material.color] on this [Dialog]'s [Material].
   ///
-  /// If `null`, [ThemeData.dialogBackgroundColor] is used.
+  /// If `null`, [DialogTheme.backgroundColor] is used.
   /// {@endtemplate}
   final Color? backgroundColor;
 
@@ -127,7 +126,7 @@ class CustomDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final DialogTheme dialogTheme = DialogTheme.of(context);
+    final dialogTheme = DialogTheme.of(context);
     final EdgeInsets effectivePadding =
         MediaQuery.of(context).viewInsets + (insetPadding ?? EdgeInsets.zero);
     return AnimatedPadding(
@@ -145,9 +144,7 @@ class CustomDialog extends StatelessWidget {
           child: ConstrainedBox(
             constraints: const BoxConstraints(minWidth: 20.0, minHeight: 20.0),
             child: Material(
-              color: backgroundColor ??
-                  dialogTheme.backgroundColor ??
-                  Theme.of(context).dialogBackgroundColor,
+              color: backgroundColor ?? dialogTheme.backgroundColor,
               elevation:
                   elevation ?? dialogTheme.elevation ?? _defaultElevation,
               shape: shape ?? dialogTheme.shape ?? _defaultDialogShape,
@@ -248,7 +245,7 @@ class AlertDialog extends StatelessWidget {
   /// null, which implies a default that depends on the values of the other
   /// properties. See the documentation of [titlePadding] for details.
   const AlertDialog({
-    Key? key,
+    super.key,
     this.title,
     this.titlePadding,
     this.titleTextStyle,
@@ -269,9 +266,7 @@ class AlertDialog extends StatelessWidget {
     this.shape,
     this.alignment,
     this.scrollable = false,
-  })  : assert(contentPadding != null),
-        assert(clipBehavior != null),
-        super(key: key);
+  });
 
   /// The (optional) title of the dialog is displayed in a large font at the top
   /// of the dialog.
@@ -461,7 +456,7 @@ class AlertDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     assert(debugCheckHasMaterialLocalizations(context));
     final ThemeData theme = Theme.of(context);
-    final DialogTheme dialogTheme = DialogTheme.of(context);
+    final dialogTheme = DialogTheme.of(context);
 
     String? label = semanticLabel;
     switch (theme.platform) {
@@ -478,7 +473,7 @@ class AlertDialog extends StatelessWidget {
     // The paddingScaleFactor is used to adjust the padding of Dialog's
     // children.
     final double paddingScaleFactor =
-        _paddingScaleFactor(MediaQuery.of(context).textScaleFactor);
+        _paddingScaleFactor(MediaQuery.textScalerOf(context).scale(1.0));
     final TextDirection? textDirection = Directionality.maybeOf(context);
 
     Widget? titleWidget;
@@ -499,7 +494,7 @@ class AlertDialog extends StatelessWidget {
         child: DefaultTextStyle(
           style: titleTextStyle ??
               dialogTheme.titleTextStyle ??
-              theme.textTheme.headline6!,
+              theme.textTheme.titleLarge!,
           child: Semantics(
             // For iOS platform, the focus always lands on the title.
             // Set nameRoute to false to avoid title being announce twice.
@@ -526,7 +521,7 @@ class AlertDialog extends StatelessWidget {
         child: DefaultTextStyle(
           style: contentTextStyle ??
               dialogTheme.contentTextStyle ??
-              theme.textTheme.subtitle1!,
+              theme.textTheme.titleMedium!,
           child: Semantics(
             container: true,
             child: content,
@@ -584,7 +579,7 @@ class AlertDialog extends StatelessWidget {
       ),
     );
 
-    if (label != null)
+    if (label != null) {
       dialogChild = Semantics(
         scopesRoute: true,
         explicitChildNodes: true,
@@ -592,6 +587,7 @@ class AlertDialog extends StatelessWidget {
         label: label,
         child: dialogChild,
       );
+    }
 
     return Dialog(
       backgroundColor: backgroundColor,
@@ -638,11 +634,11 @@ class AlertDialog extends StatelessWidget {
 class SimpleDialogOption extends StatelessWidget {
   /// Creates an option for a [SimpleDialog].
   const SimpleDialogOption({
-    Key? key,
+    super.key,
     this.onPressed,
     this.padding,
     this.child,
-  }) : super(key: key);
+  });
 
   /// The callback that is called when this option is selected.
   ///
@@ -754,7 +750,7 @@ class SimpleDialog extends StatelessWidget {
   ///
   /// The [titlePadding] and [contentPadding] arguments must not be null.
   const SimpleDialog({
-    Key? key,
+    super.key,
     this.title,
     this.titlePadding = const EdgeInsets.fromLTRB(24.0, 24.0, 24.0, 0.0),
     this.titleTextStyle,
@@ -767,9 +763,7 @@ class SimpleDialog extends StatelessWidget {
     this.clipBehavior = Clip.none,
     this.shape,
     this.alignment,
-  })  : assert(titlePadding != null),
-        assert(contentPadding != null),
-        super(key: key);
+  });
 
   /// The (optional) title of the dialog is displayed in a large font at the top
   /// of the dialog.
@@ -866,7 +860,7 @@ class SimpleDialog extends StatelessWidget {
     // The paddingScaleFactor is used to adjust the padding of Dialog
     // children.
     final double paddingScaleFactor =
-        _paddingScaleFactor(MediaQuery.of(context).textScaleFactor);
+        _paddingScaleFactor(MediaQuery.textScalerOf(context).scale(1.0));
     final TextDirection? textDirection = Directionality.maybeOf(context);
 
     Widget? titleWidget;
@@ -885,7 +879,7 @@ class SimpleDialog extends StatelessWidget {
         child: DefaultTextStyle(
           style: titleTextStyle ??
               DialogTheme.of(context).titleTextStyle ??
-              theme.textTheme.headline6!,
+              theme.textTheme.titleLarge!,
           child: Semantics(
             // For iOS platform, the focus always lands on the title.
             // Set nameRoute to false to avoid title being announce twice.
@@ -931,7 +925,7 @@ class SimpleDialog extends StatelessWidget {
       ),
     );
 
-    if (label != null)
+    if (label != null) {
       dialogChild = Semantics(
         scopesRoute: true,
         explicitChildNodes: true,
@@ -939,6 +933,7 @@ class SimpleDialog extends StatelessWidget {
         label: label,
         child: dialogChild,
       );
+    }
     return Dialog(
       backgroundColor: backgroundColor,
       elevation: elevation,
@@ -1045,10 +1040,6 @@ Future<T?> showDialog<T>({
   bool useRootNavigator = true,
   RouteSettings? routeSettings,
 }) {
-  assert(builder != null);
-  assert(barrierDismissible != null);
-  assert(useSafeArea != null);
-  assert(useRootNavigator != null);
   assert(debugCheckHasMaterialLocalizations(context));
 
   final CapturedThemes themes = InheritedTheme.capture(
@@ -1120,13 +1111,12 @@ class DialogRoute<T> extends RawDialogRoute<T> {
     required BuildContext context,
     required WidgetBuilder builder,
     CapturedThemes? themes,
-    Color? barrierColor = Colors.black54,
-    bool barrierDismissible = true,
+    super.barrierColor = Colors.black54,
+    super.barrierDismissible,
     String? barrierLabel,
     bool useSafeArea = true,
-    RouteSettings? settings,
-  })  : assert(barrierDismissible != null),
-        super(
+    super.settings,
+  })  : super(
           pageBuilder: (BuildContext buildContext, Animation<double> animation,
               Animation<double> secondaryAnimation) {
             final Widget pageChild = Builder(builder: builder);
@@ -1136,13 +1126,10 @@ class DialogRoute<T> extends RawDialogRoute<T> {
             }
             return dialog;
           },
-          barrierDismissible: barrierDismissible,
-          barrierColor: barrierColor,
           barrierLabel: barrierLabel ??
               MaterialLocalizations.of(context).modalBarrierDismissLabel,
           transitionDuration: const Duration(milliseconds: 150),
           transitionBuilder: _buildMaterialDialogTransitions,
-          settings: settings,
         );
 }
 
